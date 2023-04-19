@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C A O I M H</title>
+    <link rel="stylesheet" href="../_STYLES/normalise.css">
+    <link rel="stylesheet" href="../_STYLES/typography.css">
+    <script src="js/p5.min.js"></script>
+    <script src="https://unpkg.com/p5.js-svg@1.1.1"></script>
+    <style>
+      html, body {
+        background-color: #222;
+      }
+        canvas {
+        display: block;
+        }
+
+        .ball{
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: blue;
+            position: absolute;
+            top: 0;
+        }
+    </style>
+
+</head>
+<body>
+
+<div id="ball"></div>
+</body>
+<script>
+    let theta = 0;
+    let r = 10;
+    let ball = document.getElementById('ball');
+    let pos;
+
+    function draw(){
+    pos += int(Math.sin(theta) * 100);
+
+    ball.position(0, 200);
+    theta += .1;
+    console.log(pos);
+    }
+
+
+ 
+</script>
+</html>

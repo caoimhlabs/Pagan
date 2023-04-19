@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C A O I M H</title>
+    <link rel="stylesheet" href="../_STYLES/normalise.css">
+    <link rel="stylesheet" href="../_STYLES/typography.css">
+    <script src="js/p5.min.js"></script>
+    <script src="https://unpkg.com/p5.js-svg@1.1.1"></script>
+    <style>
+      html, body {
+        background-color: #222;
+      }
+        canvas {
+  display: block;
+}
+    </style>
+
+</head>
+<body>
+
+<script>
+let img;
+let cnv;
+let dot = 6;
+let dit =8;
+let inc = 8;
+let sw = 1;
+
+
+
+function preload(){
+ // img = loadImage('images/seankin.png');
+  //img = loadImage('images/oslo_small.png');
+    img = loadImage('images/sandskulls.jpg');
+  //img = loadImage('images/erland.jpg');
+  //img = loadImage('images/dots.jpg');
+  //img = loadImage('images/word.png');
+  //img = loadImage('../__CUSTOMISATION/images/pointless_wip.jpg');
+  
+}
+
+
+function setup() {
+  
+  ellipseMode(CENTER);
+  rectMode(CENTER);
+  noFill();
+  cnv = createCanvas(img.width, img.height);
+  let curve;
+  let rad = TWO_PI/360;
+  
+  for(let col = 0; col < img.width; col += dot){
+    rad += .1;
+      for(let row = 0; row < img.height; row += dot){
+     
+      let c = img.get(col,row);
+      fill(color(c));
+      let b = brightness(c);
+/*
+      if(col % 4 == 0){
+        curve = TWO_PI;
+      } else if(col % 2 == 0) {
+        curve = TWO_PI;
+      }
+*/
+  
+        curve = PI + QUARTER_PI;
+        noFill();
+        strokeWeight(sw);
+        stroke(color(c));
+        push();
+        arc(col,row,dot, dot, 0, rad, PIE);
+        pop();
+      
+
+      
+/*
+      else if (b < 100 && b > 50){
+        curve = 10, PI + QUARTER_PI, PIE;
+      noFill();
+        strokeWeight(sw);
+        stroke(color(c));
+        push();
+        arc(col,row,dot, dot, col * b, row * b, curve, curve);
+        pop();
+      }
+*/
+     // ellipse(col, row, sw, sw);
+    }
+  }
+
+  //svg = createSVG();
+  //svg.beginRecord();
+  
+}
+
+
+function mousePressed() { 
+    save(); // save current SVG graphics
+  }
+
+
+
+//, SVG
+</script>
+</body>
+</html>

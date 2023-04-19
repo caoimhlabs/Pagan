@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+    // Define the path
+let path = [[0,0], [1,1], [2,2]];
+
+// Choose the rate of growth
+let rate = 0.1;
+
+// Create a loop to iterate over the path
+for (let i = 0; i < path.length; i++) {
+  
+  // Calculate the growth using exponential equation
+  let growth = Math.exp(rate * i);
+  
+  // Modify the coordinates of each point
+  path[i][0] *= growth;
+  path[i][1] *= growth;
+}
+
+// Visualize the result
+console.log(path);
+
+</script>
+</html>
